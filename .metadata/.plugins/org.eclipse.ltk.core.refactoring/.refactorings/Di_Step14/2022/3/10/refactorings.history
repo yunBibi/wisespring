@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;iaccess.di.ui&apos; to &apos;AopTest1/src&apos;&#x0D;&#x0A;- Original project: &apos;Di_Step14&apos;&#x0D;&#x0A;- Destination element: &apos;AopTest1/src&apos;&#x0D;&#x0A;- Original element: &apos;Di_Step14/src/iaccess.di.ui&apos;" description="Copy package" destination="=AopTest1/src" element1="/src=/optional=/true=/=/maven.pomderived=/true=/&lt;iaccess.di.ui" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1646186082757" version="1.0"/>
+</session>

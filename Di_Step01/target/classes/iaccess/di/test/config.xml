@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- Printer printer = new MonoPrinter() ; -->
+	<bean id = "mprinter" class="iaccess.di.ui.MonoPrinter"></bean>
+	<bean id = "cprinter" class="iaccess.di.ui.ColorPrinter"></bean>
+	
+	<!-- Hello hello = new Hello(); -->
+	<bean id = "hello" class="iaccess.di.entity.Hello">
+	<!-- hello.setPrinter(printer); -->
+		<property name="printer" ref="cprinter"></property>
+	</bean>
+</beans>

@@ -1,0 +1,40 @@
+1647998553705	Copy package
+1647998570853	Move compilation units
+1647998587465	Copy compilation units
+1647998590594	Delete element
+1647998714844	Rename type 'AreaSalesVO'
+1647998726306	Rename type 'MsalesVO'
+1647998764528	Rename type 'MsalesVO'
+1647998793557	Rename type 'AreaSalesVO'
+1647998799524	Rename type 'AreaSalesNVO'
+1647998805015	Rename type 'MsalesNVO'
+1647999899282	Copy package
+1647999915074	Rename resource 'SelectNVOMapper.xml'
+1648000196616	Rename type 'SelectAlias'
+1648003063911	Copy package
+1648003083737	Rename resource 'SelectVOMapper.xml'
+1648005697904	Copy package
+1648005812955	Rename resource 'SelectDepRtypeMapper.xml'
+1648016806317	Copy package
+1648017342469	Rename resource 'SelectCdataMapper.xml'
+1648017639056	Move file
+1648017641041	Move file
+1648018364644	Move compilation units
+1648022171253	Encapsulate field 'album'
+1648033447634	Encapsulate field 'mstName'
+1648086906625	Copy package
+1648172509844	Copy package
+1648174640269	Rename package 'co.kr.mono.training.astep16'
+1648177497683	Copy package
+1648177510024	Rename resource 'SelectObjectMapper.xml'
+1648177626528	Rename type 'SelectTest'
+1648177633037	Delete element
+1648177654822	Delete element
+1648177666498	Delete element
+1648178462229	Copy package
+1648178477541	Rename resource 'InsertMapper.xml'
+1648178691475	Rename type 'MybatisInsert'
+1648178705431	Rename type 'MybatisuPDATE'
+1648179137716	Copy package
+1648179152550	Rename resource 'UpdateMapper.xml'
+1648179160984	Rename type 'MybatisUpdate'

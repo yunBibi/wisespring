@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SelectBaseMapper">
+
+<!-- mybatis에 제출하기 위한 문서 / sql에 번호를 붙이는 곳 -->
+
+  <select id="findAreaSales" resultType="co.kr.mono.training.vo.AreaSalesVO">
+    SELECT AREA_CD AREACD
+      ,REGION_AREA REGIONAREA
+      ,PROD_ID PRODID
+      ,SUM(SALE_CNT) SALECNT
+	FROM SALE_TBL
+	<!--WHERE AREA_CD = ${areaCd} -->
+	WHERE AREA_CD = #{areaCd}
+	AND ROWNUM = 1
+	GROUP BY AREA_CD
+	        ,REGION_AREA
+	        ,PROD_ID
+  </select>
+  
+  <select id="findMsale" resultType="Msales">   <!-- mybatis-config에 등록했기 때문에 풀 패키지를 써주지 않아도 되는 것 -->
+	SELECT PRODID
+	      ,PRODNM
+	      ,SALECNT
+	FROM MSALES
+  </select>
+  
+  <select id="findClass" resultType="ExamListDTO">
+	SELECT NAME
+	    ,CLASS CLASSNAME
+	    ,KOR
+	    ,ENG
+	    ,MAT
+	FROM EXAM_RSLT
+	WHERE CLASS = #{argClass}
+  </select> 
+  
+</mapper>

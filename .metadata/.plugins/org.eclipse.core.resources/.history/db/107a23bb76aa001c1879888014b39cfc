@@ -1,0 +1,14 @@
+package co.kr.mono.training.astep15.mapping;
+
+import java.util.List;
+
+public class Album {
+
+	private String albumId;
+	private Artist artist;
+	private int albumSeq;
+	private String albumTitle;
+	private String openDate;
+	private List<Song> songs;
+	
+}

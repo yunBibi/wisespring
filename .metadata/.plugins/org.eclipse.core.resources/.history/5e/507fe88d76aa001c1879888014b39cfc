@@ -1,0 +1,10 @@
+package co.kr.mono.training.astep15.mapping;
+
+public class Song {
+	
+	private String albumId;
+	private Album album;
+	private Stirng songName;
+	private Long playTime;
+
+}

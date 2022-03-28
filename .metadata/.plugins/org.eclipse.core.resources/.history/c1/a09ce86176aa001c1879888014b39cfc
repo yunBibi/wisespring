@@ -1,0 +1,5 @@
+package co.kr.mono.training.astep15.mapping;
+
+public class Album {
+
+}

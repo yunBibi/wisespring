@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="SelectCdataMapper">
+
+  <select id="examDate" resultType="co.kr.mono.training.vo.SimpleVO">   
+	SELECT SYSDATE UTILCURRENTDATE
+		  ,SYSDATE SQLCURRENTDATE
+		  ,SYSDATE SQLCURRENTTIMESTAMP
+		  ,TO_CHAR(SYSDATE, 'YYYY-MM-DD HH24:MI:SS') CURRENTSTRDATE
+		  ,SYSTIMESTAMP SQLDBCURRENTTIMESTAMP
+	FROM DUAL
+  </select>
+  
+   <select id="localDateMapping" resultType="DateMappingDTO">   
+	SELECT SYSDATE localDateTime
+		  ,SYSTIMESTAMP sqlTimeStamp 
+	FROM DUAL
+  </select> 
+  
+</mapper>

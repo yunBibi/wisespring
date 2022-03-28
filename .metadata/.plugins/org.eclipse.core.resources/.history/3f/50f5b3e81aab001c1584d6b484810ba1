@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper
+	namespace="SelectObjectMapper">
+<!--
+<resultMap type="co.kr.mono.training.astep15.mapping.Song" id="songResultMap">
+	<id column="album_id" property="albumId" jdbcType="VARCHAR"/>
+	<id column="song_name" property="songName" jdbcType="VARCHAR"/>
+	<result column="play_time" property="playTime" jdbcType="BIGINT"/>
+	 실행 시 albumResultMap의 collection을 주석으로 막고 실행해야 함 cycle생김 
+	<association column="album_id" property="album" select="selectAlbumByPrimaryKey"/>
+</resultMap>
+
+<resultMap type="co.kr.mono.training.astep15.mapping.Artist" id="artistResultMap">
+	<id column="mst_id" property="mstId" jdbcType="VARCHAR"/>
+	<result column="mst_name" property="mstName" jdbcType="VARCHAR"/>
+	<result column="debut_date" property="debutDate" jdbcType="VARCHAR"/>
+</resultMap>
+
+<resultMap type="co.kr.mono.training.astep15.mapping.Album" id="albumResultMap">
+	<id column="album_id" property="albumId" jdbcType="VARCHAR"/>
+	<result column="album_seq" property="albumSeq" jdbcType="INTEGER"/>
+	<result column="album_title" property="albumTitle" jdbcType="VARCHAR"/>
+	<result column="open_date" property="openDate" jdbcType="VARCHAR"/>
+	<association column="mst_id" property="artist" select="selectArtistByPrimaryKey"/>
+	<association column="album_id" property="songs" select="selectSongByAlbumKey"/>
+	<collection column="album_id" property="songs"
+		javaType="java.util.ArrayList" ofType="co.kr.mono.training.astep15.mapping.Song"
+		select="selectSongByAlbumKey"/>
+</resultMap> 
+-->
+
+<resultMap type="co.kr.mono.training.astep15.mapping.Album" id="albumResultMap">
+	<id column="album_id" property="albumId" jdbcType="VARCHAR"/>
+	<result column="album_seq" property="albumSeq" jdbcType="INTEGER"/>
+	<result column="album_title" property="albumTitle" jdbcType="VARCHAR"/>
+	<result column="open_date" property="openDate" jdbcType="VARCHAR"/>
+	<association column="mst_id" property="artist" select="selectArtistByPrimaryKey"/>
+	<association column="album_id" property="songs" select="selectSongByAlbumKey"/>
+	<collection column="album_id" property="songs"
+		javaType="java.util.ArrayList" ofType="co.kr.mono.training.astep15.mapping.Song"
+		select="selectSongByAlbumKey"/>
+</resultMap> 
+ 
+  <select id="selectSongByAlbumKey" resultMap="songResultMap" parameterType="java.lang.String">   
+    SELECT ALBUM_ID
+          ,SONG_NAME
+          ,PLAY_TIME
+    FROM SONG
+    WHERE ALBUM_ID = #{album_id, jdbcType=VARCHAR}
+  </select> 
+ 
+
+<!--
+   <select id="selectSongByAlbumKey" resultMap="songResultMap" parameterType="java.lang.String">   
+    SELECT ALBUM_ID
+          ,SONG_NAME
+          ,PLAY_TIME
+    FROM SONG
+    WHERE ALBUM_ID = #{album_id, jdbcType=VARCHAR}
+  </select> 
+  
+ 
+   <select id="selectArtistByPrimaryKey" resultMap="artistResultMap" parameterType="java.lang.String">   
+    SELECT MST_ID
+          ,MST_NAME
+          ,DEBUT_DATE
+    FROM ARTIST
+    WHERE MST_ID = #{mst_id, jdbcType=VARCHAR}
+  </select> 
+  
+   <select id="selectAlbumByPrimaryKey" resultMap="albumResultMap" parameterType="java.lang.String">   
+    SELECT ALBUM_ID
+          ,MST_ID
+          ,ALBUM_SEQ
+          ,ALBUM_TITLE
+          ,OPEN_DATE
+    FROM ALBUM
+    WHERE ALBUM_ID = #{album_id, jdbcType=VARCHAR}
+  </select> 
+  -->  
+</mapper>

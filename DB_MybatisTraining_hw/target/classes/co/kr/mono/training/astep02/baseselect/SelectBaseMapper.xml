@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="SelectBaseMapper">
+
+  <select id="findRank" resultType="co.kr.mono.training.vo.RankVO">
+	SELECT NAME
+	      ,DENSE_RANK() OVER(ORDER BY KOR + ENG + MAT DESC) D_RK
+	      ,CLASS
+	      ,KOR
+	      ,ENG
+	      ,MAT
+	      ,KOR+ENG+MAT TOT
+	      ,KOR+ENG+MAT - LAG(KOR+ENG+MAT) OVER ( ORDER BY KOR+ENG+MAT DESC) AS LAG_CHA
+	FROM EXAM_RSLT
+  </select>
+  
+</mapper>
